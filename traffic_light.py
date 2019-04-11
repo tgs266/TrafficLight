@@ -3,49 +3,27 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
+RED = 26
+YELLOW = 20
+GREEN = 21
+
 class TrafficLight():
 
     def __init__(self):
         pass
 
-    def kill(self):
+    def end(self):
         GPIO.cleanup()
-        
 
+    def start(self, channels):
+        GPIO.setup(channels, GPIO.OUT)
 
-    def start_green(self):
-        GPIO.setup(21, GPIO.OUT)
+    def kill(self, channels):
+        GPIO.setup(channels, GPIO.IN)
 
-    def kill_green(self):
-        GPIO.setup(21, GPIO.IN)
-
-    def flash_green(self, interval):
-        self.start_green()
+    def flash(self, channels, interval):
+        self.start(channels)
         time.sleep(interval)
-        self.kill_green()
+        self.kill(channels)
 
 
-
-    def start_yellow(self):
-        GPIO.setup((20, 26), GPIO.OUT)
-
-    def kill_yellow(self):
-        GPIO.setup((20, 26), GPIO.IN)
-
-    def flash_yellow(self, interval):
-        self.start_yellow()
-        time.sleep(interval)
-        self.kill_yellow()
-
-
-    
-    def start_red(self):
-        GPIO.setup(26, GPIO.OUT)
-
-    def kill_red(self):
-        GPIO.setup(26, GPIO.IN)
-
-    def flash_red(self, interval):
-        self.start_red()
-        time.sleep(interval)
-        self.kill_red()

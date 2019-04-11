@@ -1,9 +1,7 @@
-from traffic_light import TrafficLight
+from traffic_light import TrafficLight, RED, YELLOW, GREEN
+
 
 tl = TrafficLight()
+tl.flash((RED, YELLOW, GREEN), 1)
 
-tl.flash_green(1)
-tl.flash_yellow(1)
-tl.flash_red(1)
-
-tl.kill()
+tl.end()

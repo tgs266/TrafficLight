@@ -48,3 +48,4 @@ while True:
         for i in channel:
             i = int(i)
             R_active, Y_active, G_active = activate(i, R_active, Y_active, G_active)
+            time.sleep(0.1)

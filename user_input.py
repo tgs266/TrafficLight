@@ -45,6 +45,12 @@ while True:
         else:
             R_active, Y_active, G_active = activate(channel, R_active, Y_active, G_active)
     else:
+        channel = channel.split()
+        if len(channel) == 1:
+            interval = 0.25
+        else:
+            interval = float(channel[-1])
+        channel = channel[0]
         for i in channel:
             i = int(i)
             R_active, Y_active, G_active = activate(i, R_active, Y_active, G_active)

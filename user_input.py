@@ -45,7 +45,7 @@ while True:
         else:
             R_active, Y_active, G_active = activate(channel, R_active, Y_active, G_active)
     else:
-        channel = channel.split("/")
+        channel = channel.split("|")
         print (channel)
         if len(channel) == 1:
             interval = 0.25

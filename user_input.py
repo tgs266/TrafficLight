@@ -7,8 +7,7 @@ R_active = False
 Y_active = False
 G_active = False
 
-while True:
-    channel = int(input("R (1), Y (2), G (3), EXIT (4): "))
+def activate(channel, R_active, Y_active, G_active):
     if channel == 1:
         if R_active:
             tl.kill(RED)
@@ -33,6 +32,19 @@ while True:
             tl.start(GREEN)
             G_active = True 
 
-    elif channel == 4:
-        tl.end()
-        break
+    return R_active, Y_active, G_active
+    
+
+while True:
+    channel = input("R (1), Y (2), G (3), EXIT (4): ")
+    if len(channel) == 1:
+        channel = int(channel)
+        if channel == 4:
+            tl.end()
+            break 
+        else:
+            R_active, Y_active, G_active = activate(channel, R_active, Y_active, G_active)
+    else:
+        for i in channel:
+            i = int(i)
+            R_active, Y_active, G_active = activate(i, R_active, Y_active, G_active)

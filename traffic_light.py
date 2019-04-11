@@ -35,17 +35,8 @@ class TrafficLight():
 
     def cycle_down(self, cycles, interval):
         for i in range(cycles):
-            self.start(RED)
-            time.sleep(interval)
-            self.start(YELLOW)
-            time.sleep(interval/2)
-            self.kill(RED)
-            time.sleep(interval/2)
-            self.start(GREEN)
-            time.sleep(interval/2)
-            self.kill(YELLOW)
-            time.sleep(interval/2)
-            self.kill(GREEN)
-            #self.flash(GREEN, interval)
+            self.flash(RED, interval)
+            self.flash(YELLOW, interval)
+            self.flash(GREEN, interval)
 
 

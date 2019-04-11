@@ -36,7 +36,7 @@ def activate(channel, R_active, Y_active, G_active):
     
 
 while True:
-    channel = input("R (1), Y (2), G (3), EXIT (4): ")
+    channel = str(input("R (1), Y (2), G (3), EXIT (4): "))
     if len(channel) == 1:
         channel = int(channel)
         if channel == 4:

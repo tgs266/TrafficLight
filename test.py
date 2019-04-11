@@ -1,5 +1,5 @@
 from traffic_light import TrafficLight, RED, YELLOW, GREEN
-
+import time
 
 tl = TrafficLight()
 

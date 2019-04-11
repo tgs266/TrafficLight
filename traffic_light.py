@@ -39,6 +39,8 @@ class TrafficLight():
             x = random.choice([0, 1])
             if x == 1:
                 self.flash(color, interval)
+            else:
+                time.sleep(interval)
 
     def cycle_down(self, cycles, interval):
         for i in range(cycles):

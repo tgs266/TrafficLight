@@ -3,7 +3,7 @@ import time
 import random
 import threading
 
-GPIO.setmode(GPIO.BCM)
+
 
 RED = 26
 YELLOW = 20
@@ -12,6 +12,7 @@ GREEN = 21
 class TrafficLight():
 
     def __init__(self):
+        GPIO.setmode(GPIO.BCM)
         pass
 
     def end(self):

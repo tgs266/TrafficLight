@@ -28,7 +28,7 @@ while True:
     elif channel == 3:
         if G_active:
             tl.kill(GREEN)
-            R_active = False
+            G_active = False
         else:
             tl.start(GREEN)
             G_active = True 

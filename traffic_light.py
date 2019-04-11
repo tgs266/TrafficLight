@@ -1,9 +1,8 @@
 import RPi.GPIO as GPIO 
 import time 
 import random
-import threading
 
-
+GPIO.setmode(GPIO.BCM)
 
 RED = 26
 YELLOW = 20
@@ -12,7 +11,6 @@ GREEN = 21
 class TrafficLight():
 
     def __init__(self):
-        GPIO.setmode(GPIO.BCM)
         pass
 
     def end(self):
@@ -30,19 +28,10 @@ class TrafficLight():
         self.kill(channels)
 
     def flash_random(self, length, interval):
-        for i in [RED, YELLOW, GREEN]:
-            t = threading.Thread(target=self.flash_random_thread, args=(length, interval, i))
-            t.start()
-
-    def flash_random_thread(self, length, interval, color):
-        GPIO.setmode(GPIO.BCM)
         t = time.time()
         while time.time() - t < length:
-            x = random.choice([0, 1])
-            if x == 1:
-                self.flash(color, interval)
-            else:
-                time.sleep(interval)
+            x = random.choice([RED, YELLOW, GREEN, (RED, YELLOW), (YELLOW, GREEN), (GREEN, RED)])
+            self.flash(x, interval)
 
     def cycle_down(self, cycles, interval):
         for i in range(cycles):

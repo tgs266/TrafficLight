@@ -34,6 +34,7 @@ class TrafficLight():
             t.start()
 
     def flash_random_thread(self, length, interval, color):
+        GPIO.setmode(GPIO.BCM)
         t = time.time()
         while time.time() - t < length:
             x = random.choice([0, 1])

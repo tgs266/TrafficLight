@@ -26,4 +26,10 @@ class TrafficLight():
         time.sleep(interval)
         self.kill(channels)
 
+    def cycle_down(self, cycles, interval):
+        for i in range(cycles):
+            self.flash(RED, interval)
+            self.flash(YELLOW, interval)
+            self.flash(GREEN, interval)
+
 

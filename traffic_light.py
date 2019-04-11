@@ -8,6 +8,9 @@ class TrafficLight():
     def __init__(self):
         pass
 
+    def kill(self):
+        GPIO.cleanup()
+
     def start_green(self):
         GPIO.setup(21, GPIO.OUT)
 

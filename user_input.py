@@ -36,7 +36,7 @@ def activate(channel, R_active, Y_active, G_active):
     
 
 while True:
-    channel = str(input("R (1), Y (2), G (3), EXIT (4): "))
+    channel = input("R (1), Y (2), G (3), EXIT (4): ")
     if len(channel) == 1:
         channel = int(channel)
         if channel == 4:
@@ -46,7 +46,7 @@ while True:
             R_active, Y_active, G_active = activate(channel, R_active, Y_active, G_active)
     else:
         print (channel)
-        channel = channel.split("|")
+        channel = channel.split(" ")
         print (channel)
         if len(channel) == 1:
             interval = 0.25

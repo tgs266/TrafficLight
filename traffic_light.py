@@ -27,10 +27,10 @@ class TrafficLight():
 
 
     def start_yellow(self):
-        GPIO.setup(20, GPIO.OUT)
+        GPIO.setup((20, 26), GPIO.OUT)
 
     def kill_yellow(self):
-        GPIO.setup(20, GPIO.IN)
+        GPIO.setup((20, 26), GPIO.IN)
 
     def flash_yellow(self, interval):
         self.start_yellow()

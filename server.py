@@ -34,7 +34,7 @@ def test1():
 rec_data = []
 time_start = 0
 recent = 0
-done = True
+done = False
 
 @app.route("/record", methods=['GET', 'POST'])
 def record():
@@ -60,6 +60,7 @@ def record():
             time_start = 0
             recent = 0
             done = True 
+            
 
         if request.form.get("record") == "Stop":
             time_start = 0
@@ -71,6 +72,7 @@ def record():
                 tl.start(i[0])
                 time.sleep(i[1])
             done = False 
+            rec_data = []
 
         print(rec_data)
     return render_template("record.html")

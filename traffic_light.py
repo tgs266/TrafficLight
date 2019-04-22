@@ -11,16 +11,24 @@ GREEN = 21
 class TrafficLight():
 
     def __init__(self):
-        pass
+        self.live = {RED: -1, YELLOW: -1, GREEN: -1}  # -1 -> dead | 1 -> alive
 
     def end(self):
         GPIO.cleanup()
 
     def start(self, channels):
         GPIO.setup(channels, GPIO.OUT)
+        if type(channels) == type([]):
+            for i in channels:
+                self.live[i] *= -1
 
     def kill(self, channels):
         GPIO.setup(channels, GPIO.IN)
+        if type(channels) == type([]):
+            for i in channels:
+                self.live[i] *= -1
+
+    
 
     def flash(self, channels, interval):
         self.start(channels)

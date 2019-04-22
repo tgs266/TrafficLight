@@ -15,21 +15,18 @@ def test1():
     print(request.method)
     if request.method == 'POST':
         if request.form.get("red") == "Red":
-            if tl.live[RED] == 1:
-                tl.kill(RED)
-            else:
-                tl.start(RED)
+            hit(RED)
         elif request.form.get("yellow") == "Yellow":
-            if tl.live[YELLOW] == 1:
-                tl.kill(YELLOW)
-            else:
-                tl.start(YELLOW)
+            hit(YELLOW)
         elif request.form.get("green") == "Green":
-            if tl.live[GREEN] == 1:
-                tl.kill(GREEN)
-            else:
-                tl.start(GREEN)
+            hit(GREEN)
     return render_template("test1.html")
+
+def hit(channel):
+    if tl.live[channel] == 1:
+        tl.kill(channel)
+    else:
+        tl.start(channel)
 
 rec_data = []
 time_start = 0
@@ -69,7 +66,7 @@ def record():
         
         if request.form.get("play") == "Play":
             for i in rec_data:
-                tl.start(i[0])
+                hit(i)
                 time.sleep(i[1])
             done = False 
             rec_data = []

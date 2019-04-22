@@ -18,8 +18,16 @@ def test1():
                 tl.kill(RED)
             else:
                 tl.start(RED)
-        elif 'watch' in request.form:
-            pass
+        elif request.form.get("yellow") == "Yellow":
+            if tl.live[YELLOW] == 1:
+                tl.kill(YELLOW)
+            else:
+                tl.start(YELLOW)
+        elif request.form.get("green") == "Green":
+            if tl.live[GREEN] == 1:
+                tl.kill(GREEN)
+            else:
+                tl.start(GREEN)
     return render_template("test1.html")
  
 if __name__ == "__main__":

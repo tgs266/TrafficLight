@@ -53,7 +53,7 @@ def record():
             recent = time.time()
         elif request.form.get("green") == "Green":
             rec_data.append([GREEN, time.time() - recent])
-            recent = time.time())
+            recent = time.time()
         print(rec_data)
     return render_template("record.html")
  

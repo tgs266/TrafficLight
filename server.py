@@ -41,6 +41,7 @@ def comm(cmd=None):
         hit(YELLOW)
     elif cmd == GREEN or cmd == "GREEN":
         hit(GREEN)
+    return False
 
 @app.route("/record", methods=['GET', 'POST'])
 def record():

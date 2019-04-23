@@ -1,7 +1,7 @@
 
 <script type=text/javascript>
     $(function() {
-      $('#buttonR').bind('click', function() {
+      $('a#buttonR').bind('click', function() {
         $.getJSON('/RED',
             function(data) {
           //do nothing
@@ -10,7 +10,7 @@
   });
 });
     $(function() {
-      $('#buttonY').bind('click', function() {
+      $('a#buttonY').bind('click', function() {
         $.getJSON('/YELLOW',
             function(data) {
           //do nothing
@@ -19,7 +19,7 @@
   });
 });
     $(function() {
-      $('#buttonG').bind('click', function() {
+      $('a#buttonG').bind('click', function() {
         $.getJSON('/GREEN',
             function(data) {
           //do nothing
@@ -31,9 +31,11 @@
 
 <form>
 
-    <input id=buttonR type="submit" name="red" value="Red">
-    <input id=buttonY type="submit" name="yellow" value="Yellow">
-    <input id=buttonG type="submit" name="green" value="Green">
 
+    <a id=buttonR><button class='btn btn-default'>Red</button></a>
+    <a id=buttonY><button class='btn btn-default'>Yellow</button></a>
+    <a id=buttonG><button class='btn btn-default'>Green</button></a>
+
+    
 </form>
 

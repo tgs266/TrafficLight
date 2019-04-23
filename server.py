@@ -12,14 +12,14 @@ def hello():
 
 @app.route("/test1", methods=['GET', 'POST'])
 def test1():
-    print(request.method)
-    if request.method == 'POST':
-        if request.form.get("red") == "Red":
-            hit(RED)
-        elif request.form.get("yellow") == "Yellow":
-            hit(YELLOW)
-        elif request.form.get("green") == "Green":
-            hit(GREEN)
+    # print(request.method)
+    # if request.method == 'POST':
+    #     if request.form.get("red") == "Red":
+    #         hit(RED)
+    #     elif request.form.get("yellow") == "Yellow":
+    #         hit(YELLOW)
+    #     elif request.form.get("green") == "Green":
+    #         hit(GREEN)
     return render_template("test1.html")
 
 def hit(channel):
@@ -32,6 +32,15 @@ rec_data = []
 time_start = 0
 recent = 0
 done = False
+
+@app.route("/<cmd>")
+def comm(cmd=None):
+    if cmd == RED or cmd == "RED":
+        hit(RED)
+    elif cmd == YELLOW or cmd == "YELLOW":
+        hit(YELLOW)
+    elif cmd == GREEN or cmd == "GREEN":
+        hit(GREEN)
 
 @app.route("/record", methods=['GET', 'POST'])
 def record():

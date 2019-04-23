@@ -1,8 +1,39 @@
+
+<script type=text/javascript>
+    $(function() {
+      $('#buttonR').bind('click', function() {
+        $.getJSON('/RED',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('#buttonY').bind('click', function() {
+        $.getJSON('/YELLOW',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('#buttonG').bind('click', function() {
+        $.getJSON('/GREEN',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+</script>
+
 <form method="post">
 
-    <input type="submit" name="red" value="Red">
-    <input type="submit" name="yellow" value="Yellow">
-    <input type="submit" name="green" value="Green">
+    <input id=buttonR type="submit" name="red" value="Red">
+    <input id=buttonY type="submit" name="yellow" value="Yellow">
+    <input id=buttonG type="submit" name="green" value="Green">
 
 </div>
 

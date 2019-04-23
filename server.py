@@ -66,7 +66,7 @@ def record():
         
         if request.form.get("play") == "Play":
             for i in rec_data:
-                hit(i)
+                hit(i[0])
                 time.sleep(i[1])
             done = False 
             rec_data = []

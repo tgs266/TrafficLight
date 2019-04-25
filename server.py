@@ -62,12 +62,12 @@ def comm_record(cmd=None):
         recent = 0
         done = True 
     elif cmd == "PLAY":
-        if request.form.get("play") == "Play":
-            for i in rec_data:
-                hit(i[0])
-                time.sleep(i[1])
-            done = False 
-            rec_data = []
+
+        for i in rec_data:
+            hit(i[0])
+            time.sleep(i[1])
+        done = False 
+        rec_data = []
 
     elif cmd == "START" and time_start == 0 and done == False:
         time_start = time.time()

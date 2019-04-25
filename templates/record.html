@@ -1,3 +1,34 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type=text/javascript>
+    $(function() {
+      $('.r').bind('click', function() {
+        $.getJSON('/record/RED',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('.y').bind('click', function() {
+        $.getJSON('/record/YELLOW',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('.g').bind('click', function() {
+        $.getJSON('/record/GREEN',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+</script>
 
 <style>
     .btn-default {
@@ -15,9 +46,9 @@
 
 <form method="post">
 
-    <input type="submit" class='btn btn-default' style="border-radius: 8px; background-color: red" name="red" value="Red">
-    <input type="submit" class='btn btn-default' style="border-radius: 8px; background-color: yellow" name="yellow" value="Yellow">
-    <input type="submit" class='btn btn-default' style="border-radius: 8px; background-color: green" name="green" value="Green">
+    <input type="submit" class='btn btn-default r' style="border-radius: 8px; background-color: red" name="red" value="Red">
+    <input type="submit" class='btn btn-default y' style="border-radius: 8px; background-color: yellow" name="yellow" value="Yellow">
+    <input type="submit" class='btn btn-default g' style="border-radius: 8px; background-color: green" name="green" value="Green">
 
 </div>
 <form method="post">

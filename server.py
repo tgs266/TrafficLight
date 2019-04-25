@@ -44,6 +44,21 @@ def comm(cmd=None):
         hit(GREEN)
     return False
 
+@app.route("/record/<cmd>")
+def comm_record(cmd=None):
+    global rec_data, time_start, recent, done
+    print ("test")
+    if cmd == RED or cmd == "RED":
+        rec_data.append([RED, time.time() - recent])
+        recent = time.time()
+    elif cmd == YELLOW or cmd == "YELLOW":
+        rec_data.append([YELLOW, time.time() - recent])
+        recent = time.time()
+    elif cmd == GREEN or cmd == "GREEN":
+        rec_data.append([GREEN, time.time() - recent])
+        recent = time.time()
+    return False
+
 @app.route("/record", methods=['GET', 'POST'])
 def record():
     print(request.method)
@@ -53,16 +68,16 @@ def record():
 
                 time_start = time.time()
                 recent = time_start
-        elif request.form.get("red") == "Red" and done == False:
-            rec_data.append([RED, time.time() - recent])
-            recent = time.time()
+        # elif request.form.get("red") == "Red" and done == False:
+        #     rec_data.append([RED, time.time() - recent])
+        #     recent = time.time()
 
-        elif request.form.get("yellow") == "Yellow" and done == False:
-            rec_data.append([YELLOW, time.time() - recent])
-            recent = time.time()
-        elif request.form.get("green") == "Green" and done == False:
-            rec_data.append([GREEN, time.time() - recent])
-            recent = time.time()
+        # elif request.form.get("yellow") == "Yellow" and done == False:
+        #     rec_data.append([YELLOW, time.time() - recent])
+        #     recent = time.time()
+        # elif request.form.get("green") == "Green" and done == False:
+        #     rec_data.append([GREEN, time.time() - recent])
+        #     recent = time.time()
         
         if time.time() - time_start > 30:
             time_start = 0

@@ -57,6 +57,22 @@ def comm_record(cmd=None):
     elif cmd == GREEN or cmd == "GREEN":
         rec_data.append([GREEN, time.time() - recent])
         recent = time.time()
+    elif cmd == "STOP":
+        time_start = 0
+        recent = 0
+        done = True 
+    elif cmd == "PLAY":
+        if request.form.get("play") == "Play":
+            for i in rec_data:
+                hit(i[0])
+                time.sleep(i[1])
+            done = False 
+            rec_data = []
+
+    elif cmd == "START" and time_start == 0 and done == False:
+        time_start = time.time()
+        recent = time_start
+        
     return False
 
 @app.route("/record", methods=['GET', 'POST'])
@@ -64,10 +80,7 @@ def record():
     print(request.method)
     if request.method == 'POST':
         global rec_data, time_start, recent, done
-        if request.form.get("record") == "Start" and time_start == 0 and done == False:
-
-                time_start = time.time()
-                recent = time_start
+        
         # elif request.form.get("red") == "Red" and done == False:
         #     rec_data.append([RED, time.time() - recent])
         #     recent = time.time()
@@ -84,18 +97,8 @@ def record():
             recent = 0
             done = True 
             
-
-        if request.form.get("record") == "Stop":
-            time_start = 0
-            recent = 0
-            done = True 
         
-        if request.form.get("play") == "Play":
-            for i in rec_data:
-                hit(i[0])
-                time.sleep(i[1])
-            done = False 
-            rec_data = []
+        
 
         print(rec_data)
     return render_template("record.html")

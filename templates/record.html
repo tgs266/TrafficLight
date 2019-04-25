@@ -28,6 +28,36 @@
     return false;
   });
 });
+
+    $(function() {
+      $('.start').bind('click', function() {
+        $.getJSON('/record/START',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+
+    $(function() {
+      $('.stop').bind('click', function() {
+        $.getJSON('/record/STOP',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+
+    $(function() {
+      $('.play').bind('click', function() {
+        $.getJSON('/record/PLAY',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
 </script>
 
 <style>
@@ -52,9 +82,9 @@
 
 </div>
 <form method="post">
-    <input type="submit" class='btn btn-default' name="record" value="Start">
-    <input type="submit" class='btn btn-default' name="record" value="Stop">
-    <input type="submit" class='btn btn-default' name="play" value="Play">
+    <input type="submit" class='btn btn-default start' name="record" value="Start">
+    <input type="submit" class='btn btn-default stop' name="record" value="Stop">
+    <input type="submit" class='btn btn-default play' name="play" value="Play">
 </div>
 
 

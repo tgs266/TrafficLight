@@ -28,6 +28,9 @@ def hit(channel):
     else:
         tl.start(channel)
 
+def random():
+    tl.flash_random(30, 0.5)
+
 rec_data = []
 time_start = 0
 recent = 0
@@ -42,6 +45,8 @@ def comm(cmd=None):
         hit(YELLOW)
     elif cmd == GREEN or cmd == "GREEN":
         hit(GREEN)
+    elif cmd == "RANDOM":
+        random()
     return False
 
 @app.route("/record/<cmd>")

@@ -46,6 +46,7 @@ def comm(cmd=None):
     elif cmd == GREEN or cmd == "GREEN":
         hit(GREEN)
     elif cmd == "RANDOM":
+        print ("rand")
         random()
     
     return ('', 204)

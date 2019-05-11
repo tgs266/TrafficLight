@@ -39,6 +39,7 @@ done = False
 @app.route("/<cmd>")
 def comm(cmd=None):
     print ("test")
+    print (cmd)
     if cmd == RED or cmd == "RED":
         hit(RED)
     elif cmd == YELLOW or cmd == "YELLOW":

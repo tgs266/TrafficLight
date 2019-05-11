@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 tl = TrafficLight()
 
-@app.route("/")
-def hello():
-    return "Hello World!"
+# @app.route("/")
+# def hello():
+#     return "Hello World!"
 
 @app.route("/", methods=['GET', 'POST'])
-def test1():
+def home():
     # print(request.method)
     # if request.method == 'POST':
     #     if request.form.get("red") == "Red":

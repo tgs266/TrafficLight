@@ -10,7 +10,7 @@ tl = TrafficLight()
 def hello():
     return "Hello World!"
 
-@app.route("/test1", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def test1():
     # print(request.method)
     # if request.method == 'POST':
@@ -20,7 +20,7 @@ def test1():
     #         hit(YELLOW)
     #     elif request.form.get("green") == "Green":
     #         hit(GREEN)
-    return render_template("test1.html")
+    return render_template("home.html")
 
 def hit(channel):
     if tl.live[channel] == 1:

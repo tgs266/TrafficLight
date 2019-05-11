@@ -29,7 +29,7 @@ def hit(channel):
         tl.start(channel)
 
 def random():
-    tl.flash_random(30, 0.5)
+    tl.flash_random(10, 0.1)
 
 rec_data = []
 time_start = 0

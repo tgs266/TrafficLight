@@ -47,7 +47,7 @@ def comm(cmd=None):
         hit(GREEN)
     elif cmd == "RANDOM":
         random()
-    return False
+    
 
 @app.route("/record/<cmd>")
 def comm_record(cmd=None):
@@ -78,7 +78,7 @@ def comm_record(cmd=None):
         time_start = time.time()
         recent = time_start
         
-    return False
+    
 
 @app.route("/record", methods=['GET', 'POST'])
 def record():

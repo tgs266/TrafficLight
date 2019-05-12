@@ -32,6 +32,7 @@ try:
     # tl.kill((RED, YELLOW, GREEN))
 except Exception as e:
     print (e)
+    time.sleep(5)
     tl.end()
 time.sleep(2)
 print ("before end")

@@ -49,6 +49,7 @@ class TrafficLight():
 
     def flash(self, channels, interval):
         self.start(channels)
+        exit()
         time.sleep(interval)
         self.kill(channels)
 

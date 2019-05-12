@@ -2,6 +2,7 @@ from traffic_light import TrafficLight, RED, YELLOW, GREEN
 import time
 tl = TrafficLight()
 
+tl.kill((RED, YELLOW, GREEN))
 tl.flash_random(5, 0.1)
 tl.kill((RED, YELLOW, GREEN))
 time.sleep(1)

@@ -1,4 +1,5 @@
 from traffic_light import TrafficLight, RED, YELLOW, GREEN
+import time
 tl = TrafficLight()
 
 tl.flash_random(5, 0.1)

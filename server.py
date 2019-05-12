@@ -22,9 +22,9 @@ def alarm():
 @app.route("/start_alarm", methods=['GET', 'POST'])
 def start_alarm():
     if request.method == "POST":
-        print (request.get_json())
-        print (request.data)
-        print (request.args)
+        # print (request.get_json())
+        # print (request.data)
+        # print (request.args)
         print (request.form)
         print (request.form["time"])
         print (request.args["time"])

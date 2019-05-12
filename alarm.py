@@ -16,6 +16,7 @@ class Alarm(threading.Thread):
 
         while self.keep_running:
             now = time.strftime("%H:%M")
+            print (now)
             now = now.split(":")
             h = int(now[0])
             m = int(now[1])

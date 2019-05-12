@@ -1,0 +1,61 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type=text/javascript>
+    $(function() {
+      $('a#buttonR').bind('click', function() {
+        $.getJSON('/RED',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('a#buttonY').bind('click', function() {
+        $.getJSON('/YELLOW',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+    $(function() {
+      $('a#buttonG').bind('click', function() {
+        $.getJSON('/GREEN',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+$(function() {
+      $('a#buttonRa').bind('click', function() {
+        $.getJSON('/RANDOM',
+            function(data) {
+          //do nothing
+        });
+    return false;
+  });
+});
+;
+</script>
+
+<style>
+    .btn-default {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+
+<form>
+
+    <input id="time" placeholder="enter time in format HH:MM AM (or PM)"/>
+    
+    
+</form>
+

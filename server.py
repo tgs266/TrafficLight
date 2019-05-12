@@ -12,15 +12,11 @@ tl = TrafficLight()
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    # print(request.method)
-    # if request.method == 'POST':
-    #     if request.form.get("red") == "Red":
-    #         hit(RED)
-    #     elif request.form.get("yellow") == "Yellow":
-    #         hit(YELLOW)
-    #     elif request.form.get("green") == "Green":
-    #         hit(GREEN)
+
     return render_template("home.html")
+@app.route("/alarm", methods=['GET', 'POST'])
+def home():
+    return render_template("alarm.html")
 
 def hit(channel):
     if tl.live[channel] == 1:

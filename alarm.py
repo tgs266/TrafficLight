@@ -25,7 +25,6 @@ class Alarm(threading.Thread):
                 self.tl.flash_random(10, 0.05)
                 return
         time.sleep(5)
-        #self.tl.flash(RED, 1)
 
     def just_die(self):
         self.keep_running = False

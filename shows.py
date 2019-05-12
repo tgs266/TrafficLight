@@ -10,7 +10,6 @@ try:
     # tl.kill(YELLOW)
     # tl.kill(GREEN)
     print (tl.live)
-    time.sleep(1.5)
     tl.kill_all()
     # time.sleep(1)
     # tl.cycle_down(5, 0.5)
@@ -30,6 +29,7 @@ try:
 except:
     tl.end()
 time.sleep(2)
+print ("before end")
 tl.end()
 
 

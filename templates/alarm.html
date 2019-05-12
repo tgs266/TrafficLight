@@ -3,8 +3,8 @@
 <script type=text/javascript>
     
 $(function() {
-      var value = $('#textbox').val();
       $('a#start').bind('click', function() {
+      var value = $('#textbox').val();
         $.post('/start_alarm', JSON.stringify(value),
             function(data) {
           //do nothing

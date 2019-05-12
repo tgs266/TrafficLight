@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from traffic_light import TrafficLight, RED, YELLOW, GREEN
 import time 
+from alarm import Alarm
 
 app = Flask(__name__)
 
@@ -21,16 +22,17 @@ def alarm():
 
 @app.route("/start_alarm", methods=['GET', 'POST'])
 def start_alarm():
-    print (request)
-    print (request.form)
-    print (request.form["time"])
+
     if request.method == "POST":
-        # print (request.get_json())
-        # print (request.data)
-        # print (request.args)
-        print (request.form)
-        print (request.form["time"])
-        print (request.args["time"])
+        t = request.form["time"]
+        hm = t.split(":")
+        h = hm[0]
+        m = hm[1]
+        mt = m.split(" ")
+        m = mt[0]
+        t = mt[1]
+        print (h, m, t)
+
     return ("", 204)
 
 

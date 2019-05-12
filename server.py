@@ -15,7 +15,7 @@ def home():
 
     return render_template("home.html")
 @app.route("/alarm", methods=['GET', 'POST'])
-def home():
+def alarm():
     return render_template("alarm.html")
 
 def hit(channel):

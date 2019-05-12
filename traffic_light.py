@@ -57,6 +57,7 @@ class TrafficLight():
         while time.time() - t < length:
             x = random.choice([RED, YELLOW, GREEN, (RED, YELLOW), (YELLOW, GREEN), (GREEN, RED)])
             self.flash(x, interval)
+        time.sleep(interval)
 
     def cycle_down(self, cycles, interval):
         for i in range(cycles):

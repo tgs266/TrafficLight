@@ -15,7 +15,7 @@ class Alarm(threading.Thread):
     def run(self):
 
         while self.keep_running:
-            now = time.strftime()
+            now = time.strftime("%H:%M")
             now = now.split(":")
             h = int(now[0])
             m = int(now[1])

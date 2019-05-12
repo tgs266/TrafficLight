@@ -20,6 +20,7 @@ class TrafficLight():
         GPIO.cleanup()
 
     def start(self, channels):
+        print (channels)
         GPIO.output(channels, GPIO.HIGH)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
@@ -29,10 +30,7 @@ class TrafficLight():
 
     def kill(self, channels):
         GPIO.output(channels, 0)
-        print (channels)
-        print (type(channels))
-        print (type(()))
-        print (type([]))
+        
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] = -1

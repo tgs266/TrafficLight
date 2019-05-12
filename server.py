@@ -28,10 +28,10 @@ def start_alarm():
         hm = t.split(":")
         h = hm[0]
         m = hm[1]
-        mt = m.split(" ")
-        m = mt[0]
-        t = mt[1]
-        print (h, m, t)
+
+        a = Alarm(int(h), int(m))
+        a.start()
+
 
     return ("", 204)
 

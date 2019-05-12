@@ -6,9 +6,9 @@ try:
 
     #tl.kill((RED, YELLOW, GREEN))
     tl.flash_random(5, 0.1)
-    # # tl.kill(RED)
-    # # tl.kill(YELLOW)
-    # # tl.kill(GREEN)
+    tl.kill(RED)
+    tl.kill(YELLOW)
+    tl.kill(GREEN)
     # print (tl.live)
     tl.kill_all()
     # # time.sleep(1)

@@ -5,7 +5,8 @@
 $(function() {
       $('a#start').bind('click', function() {
       var value = $('#textbox').val();
-        $.post('/start_alarm', JSON.stringify(value),
+      
+        $.post('/start_alarm', {time: $('#textbox').val()},
             function(data) {
           //do nothing
         });
@@ -31,6 +32,7 @@ $(function() {
 
     <input class="textbox" id="time" style="width:300px" placeholder="enter time in format HH:MM AM (or PM)"/>
     <a id=start><button class='btn'>Start</button></a>
+    <p id="test"></p>
     
 </form>
 

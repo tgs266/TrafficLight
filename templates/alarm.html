@@ -6,7 +6,7 @@ $(function() {
       $('a#start').bind('click', function() {
       var value = $('#time').val();
       
-        $.post('/start_alarm', {time: $('#textbox').val()},
+        $.post('/start_alarm', {"time": $('#textbox').val()},
             function(data) {
 
         });

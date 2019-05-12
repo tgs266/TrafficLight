@@ -35,8 +35,9 @@ class TrafficLight():
         else:
             self.live[channels] *= -1
 
-    def swap(on, off):
-        GPIO.setup((on, off))
+    def swap(self, on, off):
+        self.start(on)
+        self.kill(off)
 
     
 
@@ -99,13 +100,14 @@ class TrafficLight():
             time.sleep(interval)
             self.start(YELLOW)
             time.sleep(interval)
-            self.(GREEN)
+            self.swap(GREEN, RED)
             time.sleep(interval)
-            self.kill(RED)
+            self.swap(RED, YELLOW)
             time.sleep(interval)
-            self.kill(YELLOW)
+            self.swap(YELLOW, GREEN)
             time.sleep(interval)
-            self.kill(RED)
+            self.swap(GREEN, RED)
             time.sleep(interval)
+            self.kill(GREEN)
 
 

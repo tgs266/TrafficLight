@@ -27,6 +27,7 @@ try:
     # tl.kill((RED, YELLOW, GREEN))
 except:
     tl.end()
+time.sleep(2)
 tl.end()
 
 

@@ -26,6 +26,8 @@ def start_alarm():
         print (request.data)
         print (request.args)
         print (request.form)
+        print (request.form["time"])
+        print (request.args["time"])
     return ("", 204)
 
 

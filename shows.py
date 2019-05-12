@@ -11,7 +11,7 @@ try:
     # tl.kill(GREEN)
     print (tl.live)
     time.sleep(1.5)
-    tl.kill((RED, YELLOW, GREEN))
+    tl.kill_all()
     # time.sleep(1)
     # tl.cycle_down(5, 0.5)
     # tl.kill((RED, YELLOW, GREEN))

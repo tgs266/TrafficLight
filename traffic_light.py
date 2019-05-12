@@ -35,6 +35,9 @@ class TrafficLight():
         else:
             self.live[channels] = -1
 
+    def kill_all(self):
+        GPIO.setup((RED, YELLOW, GREEN), (0, 0, 0))
+
     def swap(self, on, off):
         GPIO.output((on, off), (GPIO.HIGH, GPIO.LOW))
         self.live[on] = 1

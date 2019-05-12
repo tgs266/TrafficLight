@@ -12,12 +12,15 @@ class TrafficLight():
 
     def __init__(self):
         self.live = {RED: -1, YELLOW: -1, GREEN: -1}  # -1 -> dead | 1 -> alive
+        GPIO.setup(RED, GPIO.OUT)
+        GPIO.setup(YELLOW, GPIO.OUT)
+        GPIO.setup(GREEN, GPIO.OUT)
 
     def end(self):
         GPIO.cleanup()
 
     def start(self, channels):
-        GPIO.setup(channels, GPIO.OUT)
+        GPIO.setup(channels, GPIO.HIGH)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] *= -1
@@ -25,12 +28,15 @@ class TrafficLight():
             self.live[channels] *= -1
 
     def kill(self, channels):
-        GPIO.setup(channels, GPIO.IN)
+        GPIO.setup(channels, GPIO.LOW)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] *= -1
         else:
             self.live[channels] *= -1
+
+    def swap(on, off):
+        GPIO.setup((on, off))
 
     
 
@@ -81,6 +87,21 @@ class TrafficLight():
             self.start(GREEN)
             time.sleep(interval)
             self.kill(GREEN)
+            time.sleep(interval)
+            self.kill(YELLOW)
+            time.sleep(interval)
+            self.kill(RED)
+            time.sleep(interval)
+
+    def slide_up(self, cycles, interval):
+        for i in range(cycles):
+            self.start(RED)
+            time.sleep(interval)
+            self.start(YELLOW)
+            time.sleep(interval)
+            self.(GREEN)
+            time.sleep(interval)
+            self.kill(RED)
             time.sleep(interval)
             self.kill(YELLOW)
             time.sleep(interval)

@@ -4,7 +4,7 @@ import time
 tl = TrafficLight()
 try:
 
-    tl.kill((RED, YELLOW, GREEN))
+    #tl.kill((RED, YELLOW, GREEN))
     tl.flash_random(5, 0.1)
     # # tl.kill(RED)
     # # tl.kill(YELLOW)

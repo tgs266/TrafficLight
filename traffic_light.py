@@ -51,4 +51,40 @@ class TrafficLight():
             self.flash(YELLOW, interval)
             self.flash(GREEN, interval)
 
+    def cycle_up(self, cycles, interval):
+        for i in range(cycles):
+            self.flash(GREEN, interval)
+            self.flash(YELLOW, interval)
+            self.flash(RED, interval)
+
+    def build_up(self, cycles, interval):
+        for i in range(cycles):
+            self.start(GREEN)
+            time.sleep(interval)
+            self.start(YELLOW)
+            time.sleep(interval)
+            self.start(RED)
+            time.sleep(interval)
+            self.kill(RED)
+            time.sleep(interval)
+            self.kill(YELLOW)
+            time.sleep(interval)
+            self.kill(GREEN)
+            time.sleep(interval)
+
+    def build_down(self, cycles, interval):
+        for i in range(cycles):
+            self.start(RED)
+            time.sleep(interval)
+            self.start(YELLOW)
+            time.sleep(interval)
+            self.start(GREEN)
+            time.sleep(interval)
+            self.kill(GREEN)
+            time.sleep(interval)
+            self.kill(YELLOW)
+            time.sleep(interval)
+            self.kill(RED)
+            time.sleep(interval)
+
 

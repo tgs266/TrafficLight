@@ -12,15 +12,15 @@ class TrafficLight():
 
     def __init__(self):
         self.live = {RED: -1, YELLOW: -1, GREEN: -1}  # -1 -> dead | 1 -> alive
-        GPIO.setup(RED, GPIO.OUT)
-        GPIO.setup(YELLOW, GPIO.OUT)
-        GPIO.setup(GREEN, GPIO.OUT)
+        GPIO.setup(RED, GPIO.OUT, initial=0)
+        GPIO.setup(YELLOW, GPIO.OUT, initial=0)
+        GPIO.setup(GREEN, GPIO.OUT, initial=0)
 
     def end(self):
         GPIO.cleanup()
 
     def start(self, channels):
-        GPIO.output(channels, GPIO.HIGH)
+        GPIO.output(channels, 1)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] *= -1
@@ -28,7 +28,7 @@ class TrafficLight():
             self.live[channels] *= -1
 
     def kill(self, channels):
-        GPIO.output(channels, GPIO.LOW)
+        GPIO.output(channels, 0)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] *= -1

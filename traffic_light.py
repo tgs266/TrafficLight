@@ -58,6 +58,7 @@ class TrafficLight():
         t = time.time()
         while time.time() - t < length:
             x = random.choice([RED, YELLOW, GREEN, (RED, YELLOW), (YELLOW, GREEN), (GREEN, RED)])
+            print (x)
             self.flash(x, interval)
             raise Exception
 

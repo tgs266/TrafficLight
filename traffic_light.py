@@ -28,7 +28,7 @@ class TrafficLight():
             self.live[channels] = 1
 
     def kill(self, channels):
-        GPIO.output(channels, GPIO.LOW)
+        GPIO.output(channels, [GPIO.LOW] * len(channels))
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] = -1

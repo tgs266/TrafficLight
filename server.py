@@ -14,9 +14,18 @@ tl = TrafficLight()
 def home():
 
     return render_template("home.html")
+
 @app.route("/alarm", methods=['GET', 'POST'])
 def alarm():
     return render_template("alarm.html")
+
+@app.route("/start_alarm", methods=['GET', 'POST'])
+def start_alarm():
+    if request.method == "POST":
+        print (request)
+    return ("", 204)
+
+
 
 def hit(channel):
     if tl.live[channel] == 1:

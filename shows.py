@@ -10,7 +10,7 @@ try:
     # # tl.kill(YELLOW)
     # # tl.kill(GREEN)
     # print (tl.live)
-    # # tl.kill_all()
+    tl.kill_all()
     # # time.sleep(1)
     # # tl.cycle_down(5, 0.5)
     # tl.kill((RED, YELLOW, GREEN))

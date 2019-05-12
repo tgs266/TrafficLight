@@ -20,7 +20,6 @@ class TrafficLight():
         GPIO.cleanup()
 
     def start(self, channels):
-        print (channels)
         GPIO.output(channels, GPIO.HIGH)
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
@@ -30,7 +29,6 @@ class TrafficLight():
 
     def kill(self, channels):
         GPIO.output(channels, 0)
-        
         if type(channels) == type([]) or type(channels) == type(()):
             for i in channels:
                 self.live[i] = -1
@@ -49,7 +47,6 @@ class TrafficLight():
 
     def flash(self, channels, interval):
         self.start(channels)
-        exit()
         time.sleep(interval)
         self.kill(channels)
 
@@ -57,9 +54,7 @@ class TrafficLight():
         t = time.time()
         while time.time() - t < length:
             x = random.choice([RED, YELLOW, GREEN, (RED, YELLOW), (YELLOW, GREEN), (GREEN, RED)])
-            print (x)
             self.flash(x, interval)
-            raise Exception
 
     def cycle_down(self, cycles, interval):
         for i in range(cycles):

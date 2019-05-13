@@ -20,6 +20,10 @@ def home():
 def alarm():
     return render_template("alarm.html")
 
+@app.route("/show", methods=['GET', 'POST'])
+def show():
+    return render_template("show.html")
+
 @app.route("/start_alarm", methods=['GET', 'POST'])
 def start_alarm():
 
@@ -31,6 +35,28 @@ def start_alarm():
 
         a = Alarm(int(h), int(m))
         a.start()
+
+
+    return ("", 204)
+
+@app.route("/show_back", methods=['GET', 'POST'])
+def show_back():
+
+    if request.method == "POST":
+        style = str(request.form["style"])
+        cycles = int(request.form["cycles"])
+        interval = int(request.form["interval"])
+
+        if style == "Random":
+            tl.flash_random(cycles, interval)
+        elif style == "Cycle Up":
+            tl.cycle_up(cycles, interval)
+        elif style == "Cycle Down":
+            tl.cycle_down(cycles, interval)
+        elif style == "Build Up":
+            tl.build_up(cycles, interval)
+        elif style == "Build Down":
+            tl.build_down(cycles, interval)
 
 
     return ("", 204)

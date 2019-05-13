@@ -9,30 +9,30 @@ try:
     tl.kill_all()
     time.sleep(1)
 
-    tl.cycle_down(5, 0.5)
+    tl.cycle_down(5, 0.1)
     tl.kill_all()
     time.sleep(1)
 
-    tl.cycle_up(5, 0.5)
+    tl.cycle_up(5, 0.1)
     tl.kill_all()
     time.sleep(1)
 
-    tl.build_up(5, 0.5)
+    tl.build_up(5, 0.1)
     tl.kill_all()
     time.sleep(1)
 
-    tl.build_down(5, 0.5)
+    tl.build_down(5, 0.1)
     tl.kill_all()
     time.sleep(1)
 
-    tl.slide_up(5, 0.5)
+    tl.slide_up(5, 0.1)
     tl.kill_all()
     time.sleep(1)
 
 except Exception as e:
-    print (e)
-    time.sleep(5)
     tl.end()
+    raise e
+    time.sleep(5)
 time.sleep(2)
 print ("before end")
 tl.end()

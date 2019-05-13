@@ -39,7 +39,8 @@ class TrafficLight():
         self.kill(GREEN)
 
     def swap(self, on, off):
-        GPIO.setup((on, off), (GPIO.OUT, GPIO.IN))
+        GPIO.setup(on, GPIO.OUT)
+        GPIO.setup(off, GPIO.IN)
         self.live[on] = 1
         self.live[off] = -1
 

@@ -98,20 +98,5 @@ class TrafficLight():
             self.kill(RED)
             time.sleep(interval)
 
-    def slide_up(self, cycles, interval):
-        for i in range(cycles):
-            self.start(RED)
-            time.sleep(interval)
-            self.start(YELLOW)
-            time.sleep(interval)
-            self.swap(GREEN, RED)
-            time.sleep(interval)
-            self.swap(RED, YELLOW)
-            time.sleep(interval)
-            self.swap(YELLOW, GREEN)
-            time.sleep(interval)
-            self.swap(GREEN, RED)
-            time.sleep(interval)
-            self.kill(GREEN)
 
 

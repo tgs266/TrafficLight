@@ -12,9 +12,7 @@ class TrafficLight():
 
     def __init__(self):
         self.live = {RED: -1, YELLOW: -1, GREEN: -1}  # -1 -> dead | 1 -> alive
-        GPIO.setup(RED, GPIO.IN)
-        GPIO.setup(YELLOW, GPIO.IN)
-        GPIO.setup(GREEN, GPIO.IN)
+ 
 
     def end(self):
         GPIO.cleanup()

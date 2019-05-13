@@ -45,7 +45,7 @@ def show_back():
     if request.method == "POST":
         style = str(request.form["style"])
         cycles = int(request.form["cycles"])
-        interval = int(request.form["interval"])
+        interval = float(request.form["interval"])
 
         if style == "Random":
             tl.flash_random(cycles, interval)

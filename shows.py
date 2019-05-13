@@ -5,27 +5,29 @@ tl = TrafficLight()
 try:
 
     #tl.kill((RED, YELLOW, GREEN))
-    tl.flash_random(5, 0.1)
+    i = 0.25
+
+    tl.flash_random(5, i)
     tl.kill_all()
     time.sleep(1)
 
-    tl.cycle_down(5, 0.1)
+    tl.cycle_down(5, i)
     tl.kill_all()
     time.sleep(1)
 
-    tl.cycle_up(5, 0.1)
+    tl.cycle_up(5, i)
     tl.kill_all()
     time.sleep(1)
 
-    tl.build_up(5, 0.1)
+    tl.build_up(5, i)
     tl.kill_all()
     time.sleep(1)
 
-    tl.build_down(5, 0.1)
+    tl.build_down(5, i)
     tl.kill_all()
     time.sleep(1)
 
-    tl.slide_up(5, 0.1)
+    tl.slide_up(5, i)
     tl.kill_all()
     time.sleep(1)
 

@@ -111,11 +111,13 @@ def comm_record(cmd=None):
         recent = 0
         done = True 
     elif cmd == "PLAY":
-
-        for i in rec_data:
+        rec_data.append(rec_data[-1])
+        for i in range(len(rec_data)):
+            a = rec_data[i + 1]
+            i = rec_data[i]
             print (i)
             hit(i[0])
-            time.sleep(i[1])
+            time.sleep(a[1])
         done = False 
         rec_data = []
 

@@ -112,7 +112,7 @@ def comm_record(cmd=None):
         done = True 
     elif cmd == "PLAY":
         rec_data.append(rec_data[-1])
-        for i in range(len(rec_data)):
+        for i in range(len(rec_data) - 1):
             a = rec_data[i + 1]
             i = rec_data[i]
             print (i)

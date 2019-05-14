@@ -115,7 +115,6 @@ def comm_record(cmd=None):
         for i in range(len(rec_data) - 1):
             a = rec_data[i + 1]
             i = rec_data[i]
-            print (i)
             hit(i[0])
             time.sleep(a[1])
         done = False 

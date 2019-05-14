@@ -113,6 +113,7 @@ def comm_record(cmd=None):
     elif cmd == "PLAY":
 
         for i in rec_data:
+            print (i)
             hit(i[0])
             time.sleep(i[1])
         done = False 
